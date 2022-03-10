@@ -1,0 +1,7 @@
+---
+dops_gitlab_server_application:
+  name: "gitlab_server"
+  type: "distro"
+  version: "v14"
+  installed: true
+...
