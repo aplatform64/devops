@@ -1,7 +1,7 @@
 ---
 namespace: "serdigital64"
 name: "devops"
-version: "1.4.1"
+version: "1.4.2"
 readme: "README.md"
 authors:
   - "SerDigital64 <https://github.com/serdigital64>"
@@ -13,8 +13,9 @@ tags:
   - "devops"
 dependencies:
   serdigital64.backup: "*"
-  serdigital64.system: "*"
   serdigital64.development: "*"
+  serdigital64.security: "*"
+  serdigital64.system: "*"
 repository: "https://github.com/serdigital64/aplatform64"
 homepage: "https://github.com/serdigital64/aplatform64"
 issues: "https://github.com/serdigital64/aplatform64/issues"
