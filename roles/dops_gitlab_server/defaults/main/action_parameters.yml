@@ -2,4 +2,6 @@
 dops_gitlab_server:
   resolve_prereq: false
   deploy: false
+  setup: false
+  control: false
 ...

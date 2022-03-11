@@ -1,0 +1,25 @@
+---
+- name: "Converge"
+  hosts: "{{ lookup('env', 'DEVAP_TEST_PLATFORM') | default('all') }}"
+  gather_facts: false
+  tasks:
+
+    - name: "Load common test vars"
+      ansible.builtin.include_vars:
+        file: "../test_vars.yml"
+
+    - name: "Discover platform"
+      ansible.builtin.setup:
+        gather_subset: "min"
+        gather_timeout: "10"
+
+    - name: "Control service"
+      vars:
+        dops_gitlab_server:
+          control: true
+        dops_gitlab_server_subsystem:
+          enabled: true
+          status: "started"
+      ansible.builtin.include_role:
+        name: "dops_gitlab_server"
+...

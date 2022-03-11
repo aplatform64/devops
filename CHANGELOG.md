@@ -7,7 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-## [1.4.0]
+## [1.4.1]
 
 ### Added
 
@@ -15,6 +15,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [1.3.1]
 
-[Unreleased]: https://github.com/serdigital64/aplatform64/compare/1.4.0...HEAD
-[1.4.0]: https://github.com/serdigital64/aplatform64/compare/1.3.1...1.4.0
+[Unreleased]: https://github.com/serdigital64/aplatform64/compare/1.4.1...HEAD
+[1.4.1]: https://github.com/serdigital64/aplatform64/compare/1.3.1...1.4.1
 [1.3.1]: https://github.com/serdigital64/aplatform64/releases/tag/1.3.1

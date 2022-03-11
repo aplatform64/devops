@@ -10,6 +10,20 @@
     - dops_gitlab_server['deploy'] is defined
     - dops_gitlab_server['deploy']
 
+- name: "DevOps / GitLab / Server / Setup"
+  ansible.builtin.include_tasks:
+    file: "dops_gitlab_server_setup.yml"
+  when:
+    - dops_gitlab_server['setup'] is defined
+    - dops_gitlab_server['setup']
+
+- name: "DevOps / GitLab / Server / Control"
+  ansible.builtin.include_tasks:
+    file: "dops_gitlab_server_control.yml"
+  when:
+    - dops_gitlab_server['control'] is defined
+    - dops_gitlab_server['control']
+
 - name: "DevOps / GitLab / Server / Finalize"
   ansible.builtin.include_tasks:
     file: "dops_gitlab_server_finalize.yml"

@@ -33,4 +33,12 @@ dops_gitlab_server_repository_catalog_distro: {}
 dops_gitlab_server_repository_catalog_yum:
   gitlab: true
 dops_gitlab_server_repository_catalog_apt: {}
+
+# Define OS subsystem states
+dops_gitlab_server_subsystem_profile:
+  service: "gitlab"
+  states:
+    started: "start"
+    stopped: "stop"
+    refreshed: "reconfigure"
 ...

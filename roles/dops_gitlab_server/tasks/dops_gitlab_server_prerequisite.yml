@@ -32,4 +32,11 @@
       prepare: true
   ansible.builtin.include_role:
     name: "serdigital64.system.sys_package"
+
+- name: "DevOps / GitLab / Server / Prerequisite / Prepare OS Firewall"
+  vars:
+    sec_firewall_os:
+      deploy: true
+  ansible.builtin.include_role:
+    name: "serdigital64.security.sec_firewall_os"
 ...
