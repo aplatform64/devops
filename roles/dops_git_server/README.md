@@ -1,15 +1,3 @@
----
-title: "Ansible Role: serdigital64.devops.dops_git_server"
-description: "Manage GIT server"
-authors:
-  - SerDigital64
-tags:
-  - ansible
-  - devops
-  - linux
-  - automation
----
-
 # Ansible Role: serdigital64.devops.dops_git_server
 
 ## Purpose

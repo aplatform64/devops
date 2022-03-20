@@ -1,15 +1,3 @@
----
-title: "Ansible Role: serdigital64.devops.dops_git_client"
-description: "Manage provisioning of client side GIT"
-authors:
-  - SerDigital64
-tags:
-  - ansible
-  - devops
-  - linux
-  - automation
----
-
 # Ansible Role: serdigital64.devops.dops_git_client
 
 ## Purpose

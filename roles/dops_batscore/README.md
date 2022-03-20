@@ -1,15 +1,3 @@
----
-title: "Ansible Role: serdigital64.devops.dops_batscore"
-description: "Manage provisioning of Bats Core"
-authors:
-  - SerDigital64
-tags:
-  - ansible
-  - devops
-  - linux
-  - automation
----
-
 # Ansible Role: serdigital64.devops.dops_batscore
 
 ## Purpose
