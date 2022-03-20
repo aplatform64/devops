@@ -1,6 +1,8 @@
 ---
 dops_git_client_platforms:
   - "CentOS8"
+  - "RedHat8"
+  - "AlmaLinux8"
   - "OracleLinux8"
   - "Ubuntu20"
   - "Ubuntu21"
@@ -11,9 +13,11 @@ dops_git_client_platforms:
 
 dops_git_client_os_family: "
   {%- if
-  ( ansible_distribution == 'CentOS' ) or
-  ( ansible_distribution == 'OracleLinux' ) or
-  ( ansible_distribution == 'Fedora' )
+      ( ansible_distribution == 'CentOS' ) or
+      ( ansible_distribution == 'RedHat' ) or
+      ( ansible_distribution == 'AlmaLinux' ) or
+      ( ansible_distribution == 'OracleLinux' ) or
+      ( ansible_distribution == 'Fedora' )
   -%}
   {{ 'RedHat' }}
   {%- elif
@@ -53,6 +57,6 @@ dops_git_client___provision_ignore: ~
 dops_git_client___provision_git: ~
 dops_git_client___provision_status: ~
 
-#dops_git_client___provision_repo
-#dops_git_client___setup_user
+# dops_git_client___provision_repo
+# dops_git_client___setup_user
 ...
