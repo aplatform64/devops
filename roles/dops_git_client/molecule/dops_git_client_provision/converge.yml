@@ -4,11 +4,14 @@
   gather_facts: false
   tasks:
 
+    - name: "Load common test vars"
+      ansible.builtin.include_vars:
+        file: "../test_vars.yml"
+
     - name: "Discover platform"
       ansible.builtin.setup:
         gather_subset: "min"
         gather_timeout: "10"
-
     - name: "Provision"
       vars:
         dops_git_client:
