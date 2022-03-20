@@ -1,6 +1,8 @@
 ---
 dops_git_server_platforms:
   - "CentOS8"
+  - "RedHat8"
+  - "AlmaLinux8"
   - "OracleLinux8"
   - "Ubuntu20"
   - "Ubuntu21"
@@ -12,6 +14,8 @@ dops_git_server_platforms:
 dops_git_server_os_family: "
   {%- if
       ( ansible_distribution == 'CentOS' ) or
+      ( ansible_distribution == 'RedHat' ) or
+      ( ansible_distribution == 'AlmaLinux' ) or
       ( ansible_distribution == 'OracleLinux' ) or
       ( ansible_distribution == 'Fedora' )
   -%}
@@ -46,7 +50,7 @@ dops_git_server_repository_presets:
 
 dops_git_server___provision_git: ~
 dops_git_server___provision_status: ~
-#dops_git_server___provision_key: ~
-#dops_git_server___prepare_path: ~
-#dops_git_server___provision_repository: ~
+# dops_git_server___provision_key: ~
+# dops_git_server___prepare_path: ~
+# dops_git_server___provision_repository: ~
 ...
