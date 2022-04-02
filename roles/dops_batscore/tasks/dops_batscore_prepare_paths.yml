@@ -8,8 +8,8 @@
     recurse: false
     state: "directory"
     path: "{{ dops_batscore___prepare_path }}"
-    owner: "{{ dops_batscore_base['access']['owner'] }}"
-    group: "{{ dops_batscore_base['access']['group'] }}"
+    owner: "{{ dops_batscore_base['access']['user']['owner'] }}"
+    group: "{{ dops_batscore_base['access']['group']['owner'] }}"
     mode: "{{ dops_batscore_base['access']['mode']['dir'] }}"
   loop:
     - "{{ dops_batscore_base['paths']['root'] }}"
