@@ -16,4 +16,6 @@
     sys_package_profiles: "{{ dops_git_client_profiles['extras'] }}"
   ansible.builtin.include_role:
     name: "serdigital64.system.sys_package"
+  when:
+    - dops_git_client_application['extras'] is defined
 ...
