@@ -17,10 +17,6 @@
       - dops_ansiblelint_paths is defined
       - dops_ansiblelint_owners is defined
 
-- name: "DevOps / AnsibleLint / Initialize / Set Platform specific variables"
-  ansible.builtin.include_vars:
-    file: "{{ 'platform-' + dops_ansiblelint_os_family + '.yml' }}"
-
 - name: "DevOps / AnsibleLint / Initialize / Resolve prerequisites"
   ansible.builtin.include_tasks:
     file: "dops_ansiblelint_prerequisite.yml"
