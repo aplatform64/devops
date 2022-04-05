@@ -12,7 +12,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - dops_batscore: MacOSX12 support
+- dops_ansiblelint: MacOSX12 support
+- dops_yamllint: MacOSX12 support
 - dops_git_client: MacOSX12 support
+- dops_shellcheck: MacOSX12 support
 
 ## [1.5.0]
 
