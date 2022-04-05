@@ -11,6 +11,7 @@
       snap: "{{ dops_shellcheck_application['type'] == 'snap' }}"
       git: "{{ dops_shellcheck_application['type'] == 'git' }}"
       pip: "{{ dops_shellcheck_application['type'] == 'pip' }}"
+      brew: "{{ dops_shellcheck_application['type'] == 'brew' }}"
     sys_repository_catalog_distro: "{{ dops_shellcheck_repository_catalog_distro }}"
     sys_repository_catalog_yum: "{{ dops_shellcheck_repository_catalog_yum }}"
     sys_repository_catalog_apt: "{{ dops_shellcheck_repository_catalog_apt }}"

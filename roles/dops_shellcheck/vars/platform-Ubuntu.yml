@@ -1,15 +1,15 @@
 ---
 # Define platform specific paths
 dops_shellcheck_base:
-  paths: "{{ dops_shellcheck_base_common['paths'] }}"
-  etc: "{{ dops_shellcheck_base_common['etc'] }}"
-  files: "{{ dops_shellcheck_base_common['files'] }}"
-  run: "{{ dops_shellcheck_base_common['run'] }}"
-  templates: "{{ dops_shellcheck_base_common['templates'] }}"
-  access: "{{ dops_shellcheck_base_common['access'] }}"
+  run:
+    distro:
+      shellcheck: "/usr/bin/shellcheck"
+    brew:
+      shellcheck: "/home/linuxbrew/.linuxbrew/bin/shellcheck"
 
 # Define application package details
 dops_shellcheck_profiles:
+  brew: "{{ dops_shellcheck_profiles_common['brew'] }}"
   snap: "{{ dops_shellcheck_profiles_common['snap'] }}"
   flatpak: "{{ dops_shellcheck_profiles_common['flatpak'] }}"
   distro:
