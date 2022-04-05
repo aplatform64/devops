@@ -17,6 +17,7 @@
       vars:
         dops_shellcheck:
           resolve_prereq: true
+        dops_shellcheck_application: "{{ test_dops_shellcheck_application }}"
       ansible.builtin.include_role:
         name: "dops_shellcheck"
 ...

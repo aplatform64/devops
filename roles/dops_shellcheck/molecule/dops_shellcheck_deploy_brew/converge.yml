@@ -1,5 +1,5 @@
 ---
-- name: "Prepare"
+- name: "Converge"
   hosts: "{{ lookup('env', 'DEVAP_TEST_PLATFORM') | default('all') }}"
   gather_facts: false
   tasks:
@@ -13,10 +13,11 @@
         gather_subset: "min"
         gather_timeout: "10"
 
-    - name: "Prepare"
+    - name: "Deploy required packages"
       vars:
         dops_shellcheck:
-          resolve_prereq: true
+          deploy: true
+        dops_shellcheck_application: "{{ test_dops_shellcheck_application }}"
       ansible.builtin.include_role:
         name: "dops_shellcheck"
 ...
