@@ -16,7 +16,7 @@ dops_gitlab_server_os_family: "
   -%}
     {{ 'RedHat' }}
   {%- else -%}
-    {{ 'Linux' }}
+    {{ 'NotSupported' }}
   {%- endif -%}
   "
 

@@ -10,6 +10,7 @@ dops_batscore_platforms:
   - "Fedora35"
   - "Debian10"
   - "Debian11"
+  - "MacOSX12"
 
 dops_batscore_os_family: "
   {%- if
@@ -25,12 +26,16 @@ dops_batscore_os_family: "
       ( ansible_distribution == 'Ubuntu' )
   -%}
     {{ 'Ubuntu' }}
+  {%- elif
+      ( ansible_distribution == 'MacOSX' )
+  -%}
+    {{ 'MacOSX' }}
   {%- else -%}
-    {{ 'Linux' }}
+    {{ 'NotSupported' }}
   {%- endif -%}
   "
 
-dops_batscore_base:
+dops_batscore_base_common:
   paths:
     root: "/opt/bats-core"
     bin: "/opt/bats-core/bin"
@@ -42,12 +47,6 @@ dops_batscore_base:
     support: "/opt/bats-core/test_helpers/support"
   run:
     bats: "/opt/bats-core/bin/bats"
-  access:
-    owner: "root"
-    group: "root"
-    mode:
-      dir: "0755"
-      exe: "0755"
 
 dops_batscore_plugins:
   assert:
@@ -78,17 +77,17 @@ dops_batscore_profiles:
         promotion:
           - source: "bats-core/bin/bats"
             target: "{{ dops_batscore_base['paths']['bin'] }}"
-            owner: "{{ dops_batscore_base['access']['owner'] }}"
-            group: "{{ dops_batscore_base['access']['group'] }}"
+            owner: "{{ dops_batscore_base['access']['user']['owner'] }}"
+            group: "{{ dops_batscore_base['access']['group']['owner'] }}"
             mode: "{{ dops_batscore_base['access']['mode']['exe'] }}"
           - source: "bats-core/lib/bats-core"
             target: "{{ dops_batscore_base['paths']['lib'] }}"
-            owner: "{{ dops_batscore_base['access']['owner'] }}"
-            group: "{{ dops_batscore_base['access']['group'] }}"
+            owner: "{{ dops_batscore_base['access']['user']['owner'] }}"
+            group: "{{ dops_batscore_base['access']['group']['owner'] }}"
           - source: "bats-core/libexec/bats-core"
             target: "{{ dops_batscore_base['paths']['libexec'] }}"
-            owner: "{{ dops_batscore_base['access']['owner'] }}"
-            group: "{{ dops_batscore_base['access']['group'] }}"
+            owner: "{{ dops_batscore_base['access']['user']['owner'] }}"
+            group: "{{ dops_batscore_base['access']['group']['owner'] }}"
   support:
     git:
       latest:
@@ -98,13 +97,13 @@ dops_batscore_profiles:
         promotion:
           - source: "bats-support/load.bash"
             target: "{{ dops_batscore_base['paths']['support'] }}"
-            owner: "{{ dops_batscore_base['access']['owner'] }}"
-            group: "{{ dops_batscore_base['access']['group'] }}"
+            owner: "{{ dops_batscore_base['access']['user']['owner'] }}"
+            group: "{{ dops_batscore_base['access']['group']['owner'] }}"
             mode: "{{ dops_batscore_base['access']['mode']['exe'] }}"
           - source: "bats-support/src"
             target: "{{ dops_batscore_base['paths']['support'] }}"
-            owner: "{{ dops_batscore_base['access']['owner'] }}"
-            group: "{{ dops_batscore_base['access']['group'] }}"
+            owner: "{{ dops_batscore_base['access']['user']['owner'] }}"
+            group: "{{ dops_batscore_base['access']['group']['owner'] }}"
   file:
     git:
       latest:
@@ -114,13 +113,13 @@ dops_batscore_profiles:
         promotion:
           - source: "bats-file/load.bash"
             target: "{{ dops_batscore_base['paths']['file'] }}"
-            owner: "{{ dops_batscore_base['access']['owner'] }}"
-            group: "{{ dops_batscore_base['access']['group'] }}"
+            owner: "{{ dops_batscore_base['access']['user']['owner'] }}"
+            group: "{{ dops_batscore_base['access']['group']['owner'] }}"
             mode: "{{ dops_batscore_base['access']['mode']['exe'] }}"
           - source: "bats-file/src"
             target: "{{ dops_batscore_base['paths']['file'] }}"
-            owner: "{{ dops_batscore_base['access']['owner'] }}"
-            group: "{{ dops_batscore_base['access']['group'] }}"
+            owner: "{{ dops_batscore_base['access']['user']['owner'] }}"
+            group: "{{ dops_batscore_base['access']['group']['owner'] }}"
   assert:
     git:
       latest:
@@ -130,13 +129,13 @@ dops_batscore_profiles:
         promotion:
           - source: "bats-assert/load.bash"
             target: "{{ dops_batscore_base['paths']['assert'] }}"
-            owner: "{{ dops_batscore_base['access']['owner'] }}"
-            group: "{{ dops_batscore_base['access']['group'] }}"
+            owner: "{{ dops_batscore_base['access']['user']['owner'] }}"
+            group: "{{ dops_batscore_base['access']['group']['owner'] }}"
             mode: "{{ dops_batscore_base['access']['mode']['exe'] }}"
           - source: "bats-assert/src"
             target: "{{ dops_batscore_base['paths']['assert'] }}"
-            owner: "{{ dops_batscore_base['access']['owner'] }}"
-            group: "{{ dops_batscore_base['access']['group'] }}"
+            owner: "{{ dops_batscore_base['access']['user']['owner'] }}"
+            group: "{{ dops_batscore_base['access']['group']['owner'] }}"
 
 #dops_batscore___prepare_path: ~
 ...

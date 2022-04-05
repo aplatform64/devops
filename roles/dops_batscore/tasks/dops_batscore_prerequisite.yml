@@ -10,11 +10,11 @@
       flatpak: "{{ dops_batscore_application['type'] == 'flatpak' }}"
       snap: "{{ dops_batscore_application['type'] == 'snap' }}"
       git: "{{ dops_batscore_application['type'] == 'git' }}"
-    sys_repository_catalog_distro: "{{ dops_batssys_repository_catalog_distro }}"
-    sys_repository_catalog_yum: "{{ dops_batssys_repository_catalog_yum }}"
-    sys_repository_catalog_apt: "{{ dops_batssys_repository_catalog_apt }}"
-    sys_repository_custom_yum: "{{ dops_batssys_repository_custom_yum }}"
-    sys_repository_custom_apt: "{{ dops_batssys_repository_custom_apt }}"
+    sys_repository_catalog_distro: "{{ dops_batscore_repository_catalog_distro }}"
+    sys_repository_catalog_yum: "{{ dops_batscore_repository_catalog_yum }}"
+    sys_repository_catalog_apt: "{{ dops_batscore_repository_catalog_apt }}"
+    sys_repository_custom_yum: "{{ dops_batscore_repository_custom_yum }}"
+    sys_repository_custom_apt: "{{ dops_batscore_repository_custom_apt }}"
   ansible.builtin.include_role:
     name: "serdigital64.system.sys_repository"
 

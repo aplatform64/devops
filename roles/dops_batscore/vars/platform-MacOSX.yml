@@ -13,7 +13,7 @@ dops_batscore_base:
     user:
       owner: "root"
     group:
-      owner: "root"
+      owner: "wheel"
     mode:
       dir: "0755"
       exe: "0755"
