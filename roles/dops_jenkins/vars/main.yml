@@ -5,6 +5,7 @@ dops_jenkins_platforms:
   - "AlmaLinux8"
   - "Rocky8"
   - "OracleLinux8"
+  - "OracleLinux9"
   - "Ubuntu20"
   - "Ubuntu21"
   - "Ubuntu22"
@@ -14,7 +15,7 @@ dops_jenkins_platforms:
   - "Debian10"
   - "Debian11"
 
-dops_jenkins_os_family: "
+dops_jenkins_os_family: |
   {%- if
       ( ansible_distribution == 'CentOS' ) or
       ( ansible_distribution == 'RedHat' ) or
@@ -32,7 +33,6 @@ dops_jenkins_os_family: "
   {%- else -%}
     {{ 'NotSupported' }}
   {%- endif -%}
-  "
 
 dops_jenkins_base_common:
   paths:

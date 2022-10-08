@@ -5,6 +5,7 @@ dops_git_client_platforms:
   - "AlmaLinux8"
   - "Rocky8"
   - "OracleLinux8"
+  - "OracleLinux9"
   - "Ubuntu20"
   - "Ubuntu21"
   - "Ubuntu22"
@@ -15,7 +16,7 @@ dops_git_client_platforms:
   - "Debian11"
   - "MacOSX12"
 
-dops_git_client_os_family: "
+dops_git_client_os_family: |
   {%- if
       ( ansible_distribution == 'CentOS' ) or
       ( ansible_distribution == 'RedHat' ) or
@@ -37,7 +38,6 @@ dops_git_client_os_family: "
   {%- else -%}
     {{ 'NotSupported' }}
   {%- endif -%}
-  "
 
 dops_git_client_base:
   access:
