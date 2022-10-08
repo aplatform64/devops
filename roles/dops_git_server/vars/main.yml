@@ -5,6 +5,7 @@ dops_git_server_platforms:
   - "AlmaLinux8"
   - "Rocky8"
   - "OracleLinux8"
+  - "OracleLinux9"
   - "Ubuntu20"
   - "Ubuntu21"
   - "Ubuntu22"
@@ -14,7 +15,7 @@ dops_git_server_platforms:
   - "Debian10"
   - "Debian11"
 
-dops_git_server_os_family: "
+dops_git_server_os_family: |
   {%- if
       ( ansible_distribution == 'CentOS' ) or
       ( ansible_distribution == 'RedHat' ) or
@@ -32,7 +33,6 @@ dops_git_server_os_family: "
   {%- else -%}
     {{ 'NotSupported' }}
   {%- endif -%}
-  "
 
 dops_git_server_base_common:
   access:

@@ -6,9 +6,10 @@ dops_gitlab_server_platforms:
   - "AlmaLinux8"
   - "Rocky8"
   - "OracleLinux8"
+  - "OracleLinux9"
 
 # Group Linux Distributions by family
-dops_gitlab_server_os_family: "
+dops_gitlab_server_os_family: |
   {%- if
       ( ansible_distribution == 'CentOS' ) or
       ( ansible_distribution == 'RedHat' ) or
@@ -20,7 +21,6 @@ dops_gitlab_server_os_family: "
   {%- else -%}
     {{ 'NotSupported' }}
   {%- endif -%}
-  "
 
 dops_gitlab_server_owners:
   gitlab_www:
