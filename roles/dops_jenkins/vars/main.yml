@@ -15,7 +15,7 @@ dops_jenkins_platforms:
   - "Debian10"
   - "Debian11"
 
-dops_jenkins_os_family: |
+dops_jenkins_os_family: >-
   {%- if
       ( ansible_distribution == 'CentOS' ) or
       ( ansible_distribution == 'RedHat' ) or

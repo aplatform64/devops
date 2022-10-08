@@ -18,7 +18,7 @@ dops_shellcheck_platforms:
   - "MacOSX12"
 
 # Group Linux Distributions by family
-dops_shellcheck_os_family: |
+dops_shellcheck_os_family: >-
   {%- if
       ( ansible_distribution == 'CentOS' ) or
       ( ansible_distribution == 'RedHat' ) or

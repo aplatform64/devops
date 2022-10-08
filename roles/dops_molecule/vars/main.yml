@@ -17,7 +17,7 @@ dops_molecule_platforms:
   - "Debian11"
 
 # Group Linux Distributions by family
-dops_molecule_os_family: |
+dops_molecule_os_family: >-
   {%- if
       ( ansible_distribution == 'CentOS' ) or
       ( ansible_distribution == 'RedHat' ) or
