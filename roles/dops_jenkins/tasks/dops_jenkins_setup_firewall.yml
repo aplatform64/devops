@@ -9,5 +9,5 @@
         port: "{{ dops_jenkins_server_options['port'] + '/tcp' }}"
         allow: "{{ dops_jenkins_subsystem['enabled'] }}"
   ansible.builtin.include_role:
-    name: "serdigital64.sec.sec_firewall_os"
+    name: "serdigital64.security.sec_firewall_os"
 ...

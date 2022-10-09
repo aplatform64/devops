@@ -17,7 +17,7 @@ dops_github_cli_platforms:
   - "Debian11"
 
 # Group Linux Distributions by family
-dops_github_cli_os_family: |
+dops_github_cli_os_family: >-
   {%- if
       ( ansible_distribution == 'CentOS' ) or
       ( ansible_distribution == 'RedHat' ) or
