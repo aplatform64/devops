@@ -9,7 +9,7 @@ dops_gitlab_server_platforms:
   - "OracleLinux9"
 
 # Group Linux Distributions by family
-dops_gitlab_server_os_family: |
+dops_gitlab_server_os_family: >-
   {%- if
       ( ansible_distribution == 'CentOS' ) or
       ( ansible_distribution == 'RedHat' ) or
